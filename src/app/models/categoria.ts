@@ -6,4 +6,9 @@ export class Categoria {
    * CantEmpleados: int 
    */
 
+  IdCategoria: number;
+  Nombre: string;
+  FechaAct: Date;
+  CantEmpleados: number;
+
 }
