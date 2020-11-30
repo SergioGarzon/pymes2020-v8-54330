@@ -13,6 +13,20 @@ import { Categoria } from "../models/categoria";
 @Injectable()
 export class CategoriasService {
 
-  constructor() { }
+  resourceUrl: string;
+  constructor(private httpClient: HttpClient) {
+    
+    this.resourceUrl = "https://pav2.azurewebsites.net/api/categorias/";
+  }
+
+  get() {
+    let params = new HttpParams();
+
+    return this.httpClient.get(this.resourceUrl, { params: params });
+  }
+
+  post(obj: Venta) {
+    return this.httpClient.post(this.resourceUrl, obj);
+  }
 
 }
