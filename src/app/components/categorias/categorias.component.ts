@@ -44,12 +44,12 @@ export class CategoriasComponent implements OnInit {
 
   ngOnInit() {
     this.FormReg = this.formBuilder.group({
-      IdPais: [0],
+      IdCategoria: [0],
       Nombre: [
         "",
         [Validators.required, Validators.minLength(4), Validators.maxLength(30)]
       ],
-      FechaCenso: [
+      FechaAct: [
         "",
         [
           Validators.required,
@@ -58,7 +58,7 @@ export class CategoriasComponent implements OnInit {
           )
         ]
       ],
-      Poblacion: [
+      CantEmpleados: [
         null,
         [Validators.required, Validators.pattern("[0-9]{1,10}")]
       ]
