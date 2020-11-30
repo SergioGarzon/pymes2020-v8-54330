@@ -6,6 +6,8 @@ import { CategoriasService } from "../../services/categorias.service";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ModalDialogService } from "../../services/modal-dialog.service";
 
+
+//pais
 @Component({
   selector: "app-categorias",
   templateUrl: "./categorias.component.html",
@@ -20,7 +22,7 @@ export class CategoriasComponent implements OnInit {
     C: "(Consultar)",
     L: "(Listado)"
   };
-  AccionABMC = "L"; // inicialmente inicia en el listado de paises (buscar con parametros)
+  AccionABMC = "L"; 
   Mensajes = {
     SD: " No se encontraron registros...",
     RD: " Revisar los datos ingresados..."
@@ -80,29 +82,7 @@ export class CategoriasComponent implements OnInit {
       });
   }
 
-/*
-  BuscarPorId(Dto, AccionABMC) {
-    window.scroll(0, 0); // ir al incio del scroll
-
-    this.categoriasService.getById(Dto.IdCategoria).subscribe((res: any) => {
-      this.FormReg.patchValue(res);
-
-      //formatear fecha de  ISO 8061 a string dd/MM/yyyy
-      var arrFecha = res.FechaCenso.substr(0, 10).split("-");
-      this.FormReg.controls.FechaCenso.patchValue(
-        arrFecha[2] + "/" + arrFecha[1] + "/" + arrFecha[0]
-      );
-
-      this.AccionABMC = AccionABMC;
-    });
-  }
-
-  Consultar(Dto) {
-    this.BuscarPorId(Dto, "C");
-  }*/
-
-  
-  Grabar() {
+    Grabar() {
     this.submitted = true;
     // verificar que los validadores esten OK
     if (this.FormReg.invalid) {
