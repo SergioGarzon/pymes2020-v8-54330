@@ -4,7 +4,7 @@ import {
   HttpParams
 } from "@angular/common/http";
 import { of } from "rxjs";
-import { Pais } from "../models/pais";
+import { Categoria } from "../models/categoria";
 
 @Injectable({
   providedIn: "root"
