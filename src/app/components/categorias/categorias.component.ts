@@ -12,7 +12,7 @@ import { ModalDialogService } from "../../services/modal-dialog.service";
   styleUrls: ["./categorias.component.css"]
 })
 export class CategoriasComponent implements OnInit {
-  Titulo = "Categorias";
+  Titulo = "categorias";
   TituloAccionABMC = {
     A: "(Agregar)",
     B: "(Eliminar)",
@@ -40,7 +40,7 @@ export class CategoriasComponent implements OnInit {
     public formBuilder: FormBuilder,
     private categoriasService: CategoriasService,
     private modalDialogService: ModalDialogService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.FormReg = this.formBuilder.group({
@@ -58,10 +58,7 @@ export class CategoriasComponent implements OnInit {
           )
         ]
       ],
-      CantEmpleados: [
-        null,
-        [Validators.required, Validators.pattern("[0-9]{1,10}")]
-      ]
+      CantEmpleados: [null, [Validators.required, Validators.pattern("[0-9]{1,10}")]],
     });
   }
 
@@ -72,15 +69,18 @@ export class CategoriasComponent implements OnInit {
     this.FormReg.markAsUntouched();
   }
 
+  
   Buscar() {
     this.SinBusquedasRealizadas = false;
-    this.categoriasService.get().subscribe((res: any) => {
-      this.Lista = res;
-      this.RegistrosTotal = res.RegistrosTotal;
-    });
+    this.categoriasService
+      .get()
+      .subscribe((res: any) => {
+        this.Lista = res;
+        this.RegistrosTotal = res.RegistrosTotal;
+      });
   }
 
-  /*
+/*
   BuscarPorId(Dto, AccionABMC) {
     window.scroll(0, 0); // ir al incio del scroll
 
@@ -95,13 +95,13 @@ export class CategoriasComponent implements OnInit {
 
       this.AccionABMC = AccionABMC;
     });
-  }*/
+  }
 
-  /*
   Consultar(Dto) {
     this.BuscarPorId(Dto, "C");
   }*/
 
+  
   Grabar() {
     this.submitted = true;
     // verificar que los validadores esten OK
@@ -135,4 +135,5 @@ export class CategoriasComponent implements OnInit {
   Volver() {
     this.AccionABMC = "L";
   }
+
 }
