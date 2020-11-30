@@ -47,7 +47,7 @@ import { CategoriasComponent } from './components/categorias/categorias.componen
   entryComponents: [ModalDialogComponent],
   providers: [
      {provide: APP_BASE_HREF, useValue : '/' },
-    { provide: HTTP_INTERCEPTORS, useClass: MyInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: MyInterceptor, multi: true, providers: [CategoriasService] }
   ],
   bootstrap: [AppComponent]
 })
