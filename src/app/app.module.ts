@@ -39,16 +39,18 @@ import { CategoriasComponent } from './components/categorias/categorias.componen
       { path: '', redirectTo: '/inicio', pathMatch: 'full' },
       { path: 'inicio', component: InicioComponent },
       { path: 'articulos', component: ArticulosComponent },
-      { path: 'articulosfamilias', component: ArticulosFamiliasComponent }
+      { path: 'articulosfamilias', component: ArticulosFamiliasComponent },
+      { path: 'categorias', component: CategoriasComponent }
     ]),
     NgbPaginationModule,
     NgbModalModule,
   ],
   entryComponents: [ModalDialogComponent],
   providers: [
-     {provide: APP_BASE_HREF, useValue : '/' },
-    { provide: HTTP_INTERCEPTORS, useClass: MyInterceptor, multi: true, providers: [CategoriasService] }
+    { provide: APP_BASE_HREF, useValue: "/" },
+    { provide: HTTP_INTERCEPTORS, useClass: MyInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
+
