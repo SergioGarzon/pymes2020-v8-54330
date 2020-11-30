@@ -109,19 +109,19 @@
 
 
 
-		<!--campo poblacion-->
+		<!--campo CantEmpleados-->
 		<div class="row form-group">
-			<label class="col-form-label col-sm-2 col-sm-offset-2" for="Poblacion">Poblacion <span
+			<label class="col-form-label col-sm-2 col-sm-offset-2" for="CantEmpleados">CantEmpleados <span
                     class="text-danger">*</span></label>
 			<div class="col-sm-6">
-				<input type="text" name="Poblacion" class="form-control" formControlName="Poblacion"
-            [ngClass]="{'is-invalid': (FormReg.controls.Poblacion.touched || submitted)  
-            && FormReg.controls.Poblacion.errors}" />
-				<span class="text-danger" *ngIf="(FormReg.controls.Poblacion.touched || submitted) 
-                       && FormReg.controls.Poblacion.errors?.required">
+				<input type="text" name="CantEmpleados" class="form-control" formControlName="CantEmpleados"
+            [ngClass]="{'is-invalid': (FormReg.controls.CantEmpleados.touched || submitted)  
+            && FormReg.controls.CantEmpleados.errors}" />
+				<span class="text-danger" *ngIf="(FormReg.controls.CantEmpleados.touched || submitted) 
+                       && FormReg.controls.CantEmpleados.errors?.required">
                     Dato requerido.
                 </span>
-				<span class="text-danger" *ngIf="FormReg.controls.Poblacion.errors?.pattern">
+				<span class="text-danger" *ngIf="FormReg.controls.CantEmpleados.errors?.pattern">
                     Dato numérico, 1 a 10 dígitos.
                 </span>
 			</div>
