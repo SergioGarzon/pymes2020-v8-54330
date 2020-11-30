@@ -83,15 +83,12 @@ export class CategoriasComponent implements OnInit {
 
     Grabar() {
     this.submitted = true;
-    // verificar que los validadores esten OK
     if (this.FormReg.invalid) {
       return;
     }
 
-    //hacemos una copia de los datos del formulario, para modificar la fecha y luego enviarlo al servidor
     const itemCopy = { ...this.FormReg.value };
 
-    //convertir fecha de string dd/MM/yyyy a ISO para que la entienda webapi
     var arrFecha = itemCopy.FechaAct.substr(0, 10).split("/");
     if (arrFecha.length == 3)
       itemCopy.FechaAct = new Date(
@@ -100,7 +97,6 @@ export class CategoriasComponent implements OnInit {
         arrFecha[0]
       ).toISOString();
 
-    // agregar post
     if (itemCopy.IdCategoria == 0 || itemCopy.IdCategoria == null) {
       itemCopy.IdCategoria = 0;
       this.categoriasService.post(itemCopy).subscribe((res: any) => {
