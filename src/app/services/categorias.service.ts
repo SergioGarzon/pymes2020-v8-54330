@@ -25,7 +25,7 @@ export class CategoriasService {
     return this.httpClient.get(this.resourceUrl, { params: params });
   }
 
-  post(obj: Venta) {
+  post(obj: Categoria) {
     return this.httpClient.post(this.resourceUrl, obj);
   }
 
