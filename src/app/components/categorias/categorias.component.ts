@@ -7,7 +7,6 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ModalDialogService } from "../../services/modal-dialog.service";
 
 
-//pais
 @Component({
   selector: "app-categorias",
   templateUrl: "./categorias.component.html",
